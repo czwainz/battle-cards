@@ -2,15 +2,17 @@
   <div class="opponent row justify-content-center">
     <div class="col-2 card-deck" v-for="card in opponentHand" @click="setActiveOpponent(card)" style="width: 15rem; height: 15rem">
       <div class="card" v-if="!card.visible">
-        <img src="@/assets/back-of-card.jpg">
+        <img src="@/assets/back-of-card.jpg" height="150px">
       </div>
       <div class="card bg-light" v-else="card">
         <img class="card-img-top" :src="card.img">
         <div class="card-body">
           <h6 class="card-title">{{card.name}}</h6>
-          <p class="card-text">Attack: {{card.attack}}
+          <p class="card-text">
+            Attack: {{card.attack}}
             <br>Defense: {{card.defense}}
-            <br>Health: {{card.health}}</p>
+            <br>Health: {{card.health}}
+          </p>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
         <input v-model="newGame.playerName" type="text" name="playerName" placeholder="Player Name"><br>
         <label for="deckChoice">Choose Deck: </label>
         <input v-model="newGame.set" type="number" min="1" max="4"><br>
-        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block">Add Player</button>
+        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block">Play Game</button>
       </form>
     </div>
   </div>

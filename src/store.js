@@ -43,7 +43,7 @@ export default new Vuex.Store({
           commit('setGame', res.data.data)
         })
     },
-    attack({ commit }, payload) {
+    attack({ commit, dispatch }, payload) {
       battlecardsapi.put(payload.gameId, payload.attackObject)
         .then(res => {
           console.log(res)

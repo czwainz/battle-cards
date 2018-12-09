@@ -15,19 +15,24 @@
           <PlayerHand></PlayerHand>
         </div>
       </div>
-      <div class="row opponentGame bg-warning">
+      <div class="row opponentGame bg-secondary">
         <div class="col-12">
           <OpponentHand></OpponentHand>
         </div>
       </div>
     </div>
-    <div class="row" v-else="game.over">
+    <div class="row bg-light" v-else="game.over">
       <div class="col-12">
         <h2>GAME OVER!</h2>
         <h4>{{game.winner}} Wins!!</h4>
-        <!-- <button>New Game?</button> -->
+        <div class="col-12 newGame">
+          <h1>
+            <router-link :to="{name: 'home'}">Play Again!</router-link>
+          </h1>
+        </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -80,5 +85,4 @@
 </script>
 
 <style>
-
 </style>
