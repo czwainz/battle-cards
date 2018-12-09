@@ -1,18 +1,18 @@
 <template>
-  <div class="opponent col-6">
-    <div class="div card-deck my-1" v-for="card in opponentHand" @click="setActiveOpponent(card)">
+  <div class="opponent row justify-content-center">
+    <div class="col-2 card-deck" v-for="card in opponentHand" @click="setActiveOpponent(card)" style="width: 15rem; height: 15rem">
       <div class="card" v-if="!card.visible">
-        <h1>IM HIDDEN</h1>
-        <!-- MAKE IMAGE FOR BACK OF CARD-->
+        <img src="@/assets/back-of-card.jpg">
       </div>
-      <div class="card" v-else="card">
-        <img class="card-img-top" :src="card.img" height="200">
-        <h4 class="card-title">{{card.name}}</h4>
-        <p>Attack: {{card.attack}}</p>
-        <p>Defense: {{card.defense}} </p>
-        <p>Health: {{card.health}}</p>
+      <div class="card bg-light" v-else="card">
+        <img class="card-img-top" :src="card.img">
+        <div class="card-body">
+          <h6 class="card-title">{{card.name}}</h6>
+          <p class="card-text">Attack: {{card.attack}}
+            <br>Defense: {{card.defense}}
+            <br>Health: {{card.health}}</p>
+        </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -40,6 +40,4 @@
 </script>
 
 <style>
-
-
 </style>

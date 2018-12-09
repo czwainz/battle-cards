@@ -1,26 +1,23 @@
 <template>
-  <div class="player col-6">
-    <div class="div card-deck my-1" v-for="card in playerHand" @click="setActivePlayer(card)">
-      <div class="card">
-        <img class="card-img-top" :src="card.img" height="200" width="200">
-        <h4 class="card-title">{{card.name}}</h4>
-        <p>Attack: {{card.attack}}</p>
-        <p>Defense: {{card.defense}}</p>
-        <p>Health: {{card.health}}</p>
+  <div class="player row justify-content-center">
+    <div class="col-2 card-deck" v-for="card in playerHand" @click="setActivePlayer(card)"">
+      <div class=" card
+      bg-light my-1">
+      <img class="card-img-top" :src="card.img" height="90px">
+      <div class="card-body">
+        <h6 class="card-title">{{card.name}}</h6>
+        <p class="card-text">Attack: {{card.attack}}
+          <br>Defense: {{card.defense}}
+          <br>Health: {{card.health}}</p>
       </div>
-
     </div>
   </div>
+  </div>
 </template>
-
 <script>
   export default {
     name: 'playerHand',
-    data() {
-      return {
-
-      }
-    },
+    data() { return {} },
     computed: {
       playerHand() {
         return this.$store.state.game.player.hand
@@ -36,6 +33,5 @@
 </script>
 
 <style>
-
 
 </style>

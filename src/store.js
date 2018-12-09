@@ -27,6 +27,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    // API REQUESTS
     startGame({ commit }, newGame) {
       battlecardsapi.post('', newGame)
         .then(res => {
@@ -42,19 +43,20 @@ export default new Vuex.Store({
           commit('setGame', res.data.data)
         })
     },
-    setActivePlayer({ commit }, card) {
-      commit('setActivePlayer', card)
-    },
-    setActiveOpponent({ commit }, card) {
-      commit('setActiveOpponent', card)
-    },
     attack({ commit }, payload) {
       battlecardsapi.put(payload.gameId, payload.attackObject)
         .then(res => {
           console.log(res)
           commit('setGame', res.data.game)
         })
-    }
+    },
+    // actions for mutation
+    setActivePlayer({ commit }, card) {
+      commit('setActivePlayer', card)
+    },
+    setActiveOpponent({ commit }, card) {
+      commit('setActiveOpponent', card)
+    },
 
   }
 })
