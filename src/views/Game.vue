@@ -25,7 +25,7 @@
     <div class="row gameOver" v-else="game.over">
       <div class="col-12 mt-5 justify-content-center align-items-center">
         <h2 class="pt-4 gameOver">·GAME OVER·</h2>
-        <h4 class="gameOver">{{game.winner}}<br>is victorious!</h4>
+        <h4 class="gameOver">{{game.winner}}<br>is victorious!!</h4>
         <br>
         <div class="col-12 justify-content-between">
           <i class="far fa-sun fa-3x b text-primary mr-3"></i>
