@@ -43,8 +43,7 @@
 
 <style>
   .card-deck {
-    color: var(--primary);
-
+    color: var(--grey-dark);
     font-family: 'Baloo', cursive;
   }
 

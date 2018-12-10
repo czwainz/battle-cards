@@ -4,7 +4,7 @@
       <div class="row justify-content-center d-block">
         <h1>Battle Arena</h1>
         <small class="text-primary">choose one player card & one opponent card to begin</small><br>
-        <button :disabled="!ready()" :class="{'btn-warning':ready()}" class="btn btn-primary btn-lg" @click="attack">PLAY</button>
+        <button :disabled="!ready()" :class="{'btn-warning':ready()}" class="btn btn-primary btn-lg" @click="attack">BATTLE</button>
       </div>
       <div class="row name justify-content-center">
         <h3 class="player">{{game.player.name}}&emsp;</h3>

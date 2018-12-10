@@ -20,7 +20,7 @@
           <button type="button" class="btn btn-success" v-model="newGame.set">3</button>
           <button type="button" class="btn btn-info" v-model="newGame.set">4</button>
         </div>
-        <button type="submit" class="btn btn-primary btn-block mt-3">TIME FOR BATTLE</button>
+        <button type="submit" class="btn btn-primary btn-block mt-3">TIME TO PLAY</button>
       </form>
     </div>
   </div>
