@@ -5,7 +5,7 @@
         <img class="card-img" :src="card.img" height="200px">
         <div class="card-img-overlay">
           <strong>
-            <h5 class="card-title text-black">{{card.name}}</h5>
+            <h5 class="card-title">{{card.name}}</h5>
             <p class="card-text">Attack: {{card.attack}}
               <br>Defense: {{card.defense}}
               <br>Health: {{card.health}}</p>

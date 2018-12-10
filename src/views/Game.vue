@@ -3,11 +3,11 @@
     <div v-if="!game.over">
       <div class="row justify-content-center d-block">
         <h1>Let's Battle</h1>
-        <button :disabled="!ready()" :class="{'btn-warning':ready()}" class="btn btn-primary btn-lg py-3 px-5" @click="attack">PLAY</button>
+        <button :disabled="!ready()" :class="{'btn-warning':ready()}" class="btn btn-primary btn-lg" @click="attack">PLAY</button>
       </div>
       <div class="row name justify-content-center">
         <h3 class="player">{{game.player.name}}&emsp;</h3>
-        <p class="vs">····vs····&emsp;&emsp;</p>
+        <p class="vs">··vs··&emsp;&emsp;</p>
         <h3 class="opponent"><strong>{{game.opponent.name}}</strong></h3>
       </div>
       <div class="row playerGame bg-info">
@@ -24,14 +24,14 @@
     <div class="row gameOver" v-else="game.over">
       <div class="col-12 mt-5 justify-content-center align-items-center">
         <h2 class="pt-4 gameOver">GAME OVER</h2>
-        <h4 class="gameWinner">{{game.winner}} Wins!</h4>
+        <h4 class="gameWinner"><strong>{{game.winner}} Wins!</strong></h4>
         <div class="col-12 justify-content-between">
           <i class="far fa-sun fa-3x b text-primary mr-3"></i>
           <i class="far fa-sun fa-5x a mr-3"></i>
           <i class="far fa-sun fa-3x b text-primary"></i>
         </div>
         <div class="col-12 newGame">
-          <h1>···<router-link :to="{name: 'home'}">New&nbsp;Battle</router-link>···</h1>
+          <h1>·.·.·<router-link :to="{name: 'home'}">New&nbsp;Battle</router-link>·.·.·</h1>
         </div>
       </div>
     </div>
@@ -82,6 +82,15 @@
 </script>
 
 <style>
+  a {
+    color: #20c997;
+  }
+
+  a:hover {
+    color: #69f0ca;
+    text-decoration: none;
+  }
+
   h1 {
     color: var(--primary);
     font-family: 'Fredoka One', cursive;
@@ -135,7 +144,11 @@
     padding: 10px;
   }
 
-  .btn {
-    font-size: 15px;
+  .btn-lg {
+    font-size: 25px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 </style>
