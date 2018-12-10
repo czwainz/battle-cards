@@ -1,13 +1,14 @@
 <template>
-  <div v-if="game.id" class="gameView container-fluid bg-success">
+  <div v-if="game.id" class="gameView container-fluid">
     <div v-if="!game.over">
       <div class="row justify-content-center d-block">
-        <h1>Let's Battle</h1>
+        <h1>Battle Arena</h1>
+        <small class="text-primary">choose one player card & one opponent card to begin</small><br>
         <button :disabled="!ready()" :class="{'btn-warning':ready()}" class="btn btn-primary btn-lg" @click="attack">PLAY</button>
       </div>
       <div class="row name justify-content-center">
         <h3 class="player">{{game.player.name}}&emsp;</h3>
-        <p class="vs">··vs··&emsp;&emsp;</p>
+        <p>··vs··&emsp;&emsp;</p>
         <h3 class="opponent"><strong>{{game.opponent.name}}</strong></h3>
       </div>
       <div class="row playerGame bg-info">
@@ -23,15 +24,17 @@
     </div>
     <div class="row gameOver" v-else="game.over">
       <div class="col-12 mt-5 justify-content-center align-items-center">
-        <h2 class="pt-4 gameOver">GAME OVER</h2>
-        <h4 class="gameWinner"><strong>{{game.winner}} Wins!</strong></h4>
+        <h2 class="pt-4 gameOver">·GAME OVER·</h2>
+        <h4 class="gameOver">{{game.winner}}<br>is victorious!</h4>
+        <br>
         <div class="col-12 justify-content-between">
           <i class="far fa-sun fa-3x b text-primary mr-3"></i>
           <i class="far fa-sun fa-5x a mr-3"></i>
           <i class="far fa-sun fa-3x b text-primary"></i>
         </div>
         <div class="col-12 newGame">
-          <h1>·.·.·<router-link :to="{name: 'home'}">New&nbsp;Battle</router-link>·.·.·</h1>
+          <br>
+          <h1>·.·.· <router-link :to="{name: 'home'}">New Battle</router-link> ·.·.·</h1>
         </div>
       </div>
     </div>
@@ -46,23 +49,15 @@
     name: 'game',
     data() { return {} },
     computed: {
-      game() {
-        return this.$store.state.game
-      },
-      playerCardId() {
-        return this.$store.state.playerCardId
-      },
-      opponentCardId() {
-        return this.$store.state.opponentCardId
-      }
+      game() { return this.$store.state.game },
+      playerCardId() { return this.$store.state.playerCardId },
+      opponentCardId() { return this.$store.state.opponentCardId }
     },
     mounted() {
       this.$store.dispatch('getGame', this.$route.params.gameId)
     },
     methods: {
-      ready() {
-        return this.playerCardId && this.opponentCardId
-      },
+      ready() { return this.playerCardId && this.opponentCardId },
       attack() {
         let payload = {
           attackObject: {
@@ -82,13 +77,12 @@
 </script>
 
 <style>
-  a {
-    color: #20c997;
-  }
-
-  a:hover {
-    color: #69f0ca;
-    text-decoration: none;
+  .btn-lg {
+    font-size: 25px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
   h1 {
@@ -98,20 +92,37 @@
     font-size: 60px;
   }
 
+  .gameView {
+    background-image: linear-gradient(#20c997, #29ABE0, #29ABE0, #29ABE0)
+  }
+
   .gameOver {
     background-color: rgb(109, 111, 103);
+  }
 
+  .playerGame {
+    background-image: linear-gradient(#29ABE0, #93C54B)
+  }
+
+  .opponentGame {
+    background-image: linear-gradient(#93C54B, #29ABE0)
   }
 
   .newGame {
     color: #20c997 !important;
   }
 
-
   h2.gameOver {
     font-family: 'Press Start 2P', cursive;
     font-size: 50px;
     text-shadow: 1px 1px 3px whitesmoke;
+  }
+
+  h4.gameOver {
+    font-family: 'Press Start 2P', cursive;
+    color: #20c997;
+    font-size: 35px;
+    text-shadow: 1px 1px 3px var(--primary);
   }
 
   h3.player {
@@ -120,15 +131,6 @@
 
   h3.opponent {
     font-family: 'Roboto Condensed', sans-serif;
-  }
-
-  h4.gameWinner {
-    font-family: 'Shadows Into Light Two', cursive;
-    font-size: 30px;
-  }
-
-  p.vs {
-    font-family: 'Montserrat', sans-serif;
   }
 
   i.a {
@@ -142,13 +144,5 @@
     background-color: var(--teal);
     border-radius: 50%;
     padding: 10px;
-  }
-
-  .btn-lg {
-    font-size: 25px;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    padding-left: 2%;
-    padding-right: 2%;
   }
 </style>

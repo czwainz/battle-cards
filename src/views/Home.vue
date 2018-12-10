@@ -1,6 +1,6 @@
 <template>
   <div class="home container-fluid">
-    <div class="row">
+    <div class="row titleHover">
       <div class="col-12 justify-content-between">
         <h1 class="text-teal"><strong>BATTLE CARDS</strong></h1>
         <i class="far fa-sun fa-3x a mr-3"></i>
@@ -12,7 +12,7 @@
       <form @submit.prevent="startGame">
         <label for="playerName" class="playGame">Please Enter Your Name</label><br>
         <input v-model="newGame.playerName" type="text" name="playerName" placeholder="Player Name" class="playerName"><br>
-        <label for="btn-group" class="playGame mt-2">Choose Deck </label>
+        <label for="btn-group" class="playGame mt-1">Choose Deck </label>
         <br>
         <div class="btn-group-lg" role="group">
           <button type="button" class="btn btn-danger" v-model="newGame.set">1</button>
@@ -27,8 +27,6 @@
 </template>
 
 <script>
-  // @ is an alias to /src
-
   export default {
     name: 'home',
     components: {
@@ -42,10 +40,7 @@
       }
     },
     methods: {
-      startGame() {
-        this.$store.dispatch('startGame', this.newGame)
-
-      }
+      startGame() { this.$store.dispatch('startGame', this.newGame) }
     },
     computed: {
       player() {
@@ -78,9 +73,22 @@
     font-family: 'Fredoka One', cursive;
     text-shadow: 2px 2px 5px var(--blue);
     font-size: 60px;
+    transition: .3s linear;
   }
 
   body {
     background-color: rgb(109, 111, 103);
+  }
+
+  small {
+    font-family: 'Baloo', cursive;
+  }
+
+  .card {
+    min-width: 10rem;
+    text-shadow: 0px 0px 3px var(--success), 0px 0px 5px var(--light);
+    box-shadow: 0px 0px 2px var(--primary);
+    transition: .3s linear;
+    background-color: var(--light)
   }
 </style>

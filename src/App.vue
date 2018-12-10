@@ -25,6 +25,19 @@
     color: #2c3e50;
   }
 
+  a {
+    color: #20c997;
+    transition: .3s linear;
+  }
+
+  a:hover {
+    color: #69f0ca;
+    text-shadow: 1px 1px 15px #20c997;
+    text-decoration: none;
+    transform: scale(1.02);
+  }
+
+
   /* #nav a.router-link-exact-active {
     color: #42b983;
   } */

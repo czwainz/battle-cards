@@ -4,7 +4,7 @@
       <div class="card" v-if="!card.visible">
         <img src="@/assets/pretty-flower.jpg" height="200px">
       </div>
-      <div class="card bg-primary" v-else=" card">
+      <div class="card bg-primary" v-else="card">
         <img class="card-img" :src="card.img" height="200px">
         <div class="card-img-overlay">
           <strong>
@@ -42,11 +42,22 @@
 </script>
 
 <style>
+  .card-deck {
+    color: var(--primary);
+
+    font-family: 'Baloo', cursive;
+  }
+
   .card {
-    min-width: 8rem;
-    text-shadow: 0px 0px 5px var(--light);
-    box-shadow: 0px 0px 2px (--primary);
+    min-width: 10rem;
+    text-shadow: 0px 0px 3px var(--success), 0px 0px 5px var(--light);
+    box-shadow: 0px 0px 2px var(--primary);
     transition: .3s linear;
+    background-color: var(--light)
+  }
+
+  .opponent .card {
+    text-shadow: 0px 0px 3px var(--danger), 0px 0px 5px var(--light);
   }
 
   img {
@@ -54,11 +65,11 @@
   }
 
   .card-title {
-    color: var(--primary)
+    color: var(--gray-dark)
   }
 
-  .card:hover {
-    box-shadow: 5px 5px var(--primary);
+  .opponent .card:hover {
+    box-shadow: 5px 5px var(--danger);
     transform: scale(1.02);
   }
 </style>
