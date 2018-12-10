@@ -15,10 +15,10 @@
         <label for="btn-group" class="playGame mt-1">Choose Deck </label>
         <br>
         <div class="btn-group-lg" role="group">
-          <button type="button" class="btn btn-danger" v-model="newGame.set">1</button>
-          <button type="button" class="btn btn-warning" v-model="newGame.set">2</button>
-          <button type="button" class="btn btn-success" v-model="newGame.set">3</button>
-          <button type="button" class="btn btn-info" v-model="newGame.set">4</button>
+          <button type="button" class="btn btn-danger" @click="newGame.set = 1">1</button>
+          <button type="button" class="btn btn-warning" @click="newGame.set = 2">2</button>
+          <button type="button" class="btn btn-success" @click="newGame.set = 3">3</button>
+          <button type="button" class="btn btn-info" @click="newGame.set = 4">4</button>
         </div>
         <button type="submit" class="btn btn-primary btn-block mt-3">TIME TO PLAY</button>
       </form>
@@ -35,7 +35,7 @@
       return {
         newGame: {
           playerName: '',
-          set: 1
+          set: ''
         }
       }
     },

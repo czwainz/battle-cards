@@ -48,6 +48,8 @@ export default new Vuex.Store({
         .then(res => {
           console.log(res)
           commit('setGame', res.data.game)
+          commit('setActivePlayer', '')
+          commit('setActiveOpponent', '')
         })
     },
     // actions for mutation
