@@ -22,19 +22,6 @@
         </div>
         <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">TIME FOR BATTLE</button>
       </form>
-      <!-- <form @submit.prevent="startGame">
-        <div class="input-group pt-2">
-          <input type="text" class="form-control mr-2" placeholder="Player Name" v-model="newGame.playerName">
-          <div class="input-group-append btn-group">
-            <button class="btn btn-outline-info" type="button" v-model="newGame.set">1</button>
-            <button class="btn btn-outline-info" type="button" v-model="newGame.set">2</button>
-            <button class="btn btn-outline-info" type="button" v-model="newGame.set">3</button>
-            <button class="btn btn-outline-info" type="button" v-model="newGame.set">4</button>
-            <br>
-            <button type="submit" class="btn btn-outline-primary btn-lg btn-block mt-1">TIME FOR BATTLE</button>
-          </div>
-        </div>
-      </form> -->
     </div>
   </div>
 </template>

@@ -23,12 +23,15 @@
     </div>
     <div class="row gameOver" v-else="game.over">
       <div class="col-12 mt-5 justify-content-center align-items-center">
-        <h2 class="pt-4">GAME OVER!</h2>
-        <h4>{{game.winner}} Wins!!</h4>
+        <h2 class="pt-4 gameOver">GAME OVER</h2>
+        <h4 class="gameWinner">{{game.winner}} Wins!</h4>
+        <div class="col-12 justify-content-between">
+          <i class="far fa-sun fa-3x b text-primary mr-3"></i>
+          <i class="far fa-sun fa-5x a mr-3"></i>
+          <i class="far fa-sun fa-3x b text-primary"></i>
+        </div>
         <div class="col-12 newGame">
-          <h1 class="text-success">
-            ···<router-link :to="{name: 'home'}">Play Again</router-link>···
-          </h1>
+          <h1>···<router-link :to="{name: 'home'}">New&nbsp;Battle</router-link>···</h1>
         </div>
       </div>
     </div>
@@ -87,19 +90,19 @@
   }
 
   .gameOver {
-    background-color: rgb(109, 111, 103)
+    background-color: rgb(109, 111, 103);
+
   }
+
+  .newGame {
+    color: #20c997 !important;
+  }
+
 
   h2.gameOver {
-    font-family: 'Fredoka One', cursive;
-  }
-
-  .btn {
-    font-size: 15px;
-  }
-
-  router-link {
-    text-decoration: line-through;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 50px;
+    text-shadow: 1px 1px 3px whitesmoke;
   }
 
   h3.player {
@@ -110,7 +113,29 @@
     font-family: 'Roboto Condensed', sans-serif;
   }
 
+  h4.gameWinner {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 30px;
+  }
+
   p.vs {
     font-family: 'Montserrat', sans-serif;
+  }
+
+  i.a {
+    background-color: var(--primary);
+    border-radius: 50%;
+    padding: 10px;
+    color: var(--teal);
+  }
+
+  i.text-primary {
+    background-color: var(--teal);
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 15px;
   }
 </style>

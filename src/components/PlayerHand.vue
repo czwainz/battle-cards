@@ -39,10 +39,6 @@
     text-shadow: 1px 1px 2px black, 0 0 25px white, 0 0 5px var(--blue);
   }
 
-  .card-title {
-    color: var(--cyan)
-  }
-
   /* .card-title {
     color: var(--secondary)
   } */
