@@ -1,14 +1,14 @@
 <template>
-  <div v-if="game.id" class="gameView container-fluid">
+  <div v-if="game.id" class="gameView container-fluid bg-success">
     <div v-if="!game.over">
       <div class="row justify-content-center d-block">
-        <h1 style="color: black;">Let's Battle</h1>
-        <button :disabled="!ready()" :class="{'btn-success':ready()}" class="btn btn-primary" @click="attack">PLAY</button>
+        <h1>Let's Battle</h1>
+        <button :disabled="!ready()" :class="{'btn-warning':ready()}" class="btn btn-primary btn-lg py-3 px-5" @click="attack">PLAY</button>
       </div>
-      <div class="row name d-block">
-        <h3>{{game.player.name}}</h3>
-        <p>vs.</p>
-        <h3>{{game.opponent.name}}</h3>
+      <div class="row name justify-content-center">
+        <h3 class="player">{{game.player.name}}&emsp;</h3>
+        <p class="vs">····vs····&emsp;&emsp;</p>
+        <h3 class="opponent"><strong>{{game.opponent.name}}</strong></h3>
       </div>
       <div class="row playerGame bg-info">
         <div class="col-12">
@@ -21,13 +21,13 @@
         </div>
       </div>
     </div>
-    <div class="row bg-light" v-else="game.over">
-      <div class="col-12">
-        <h2>GAME OVER!</h2>
+    <div class="row gameOver" v-else="game.over">
+      <div class="col-12 mt-5 justify-content-center align-items-center">
+        <h2 class="pt-4">GAME OVER!</h2>
         <h4>{{game.winner}} Wins!!</h4>
         <div class="col-12 newGame">
-          <h1>
-            <router-link :to="{name: 'home'}">Play Again!</router-link>
+          <h1 class="text-success">
+            ···<router-link :to="{name: 'home'}">Play Again</router-link>···
           </h1>
         </div>
       </div>
@@ -41,11 +41,7 @@
 
   export default {
     name: 'game',
-    data() {
-      return {
-
-      }
-    },
+    data() { return {} },
     computed: {
       game() {
         return this.$store.state.game
@@ -56,7 +52,6 @@
       opponentCardId() {
         return this.$store.state.opponentCardId
       }
-
     },
     mounted() {
       this.$store.dispatch('getGame', this.$route.params.gameId)
@@ -81,8 +76,41 @@
       OpponentHand
     }
   }
-
 </script>
 
 <style>
+  h1 {
+    color: var(--primary);
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 2px 2px 5px var(--gray);
+    font-size: 60px;
+  }
+
+  .gameOver {
+    background-color: rgb(109, 111, 103)
+  }
+
+  h2.gameOver {
+    font-family: 'Fredoka One', cursive;
+  }
+
+  .btn {
+    font-size: 15px;
+  }
+
+  router-link {
+    text-decoration: line-through;
+  }
+
+  h3.player {
+    font-family: 'Shadows Into Light Two', cursive;
+  }
+
+  h3.opponent {
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+
+  p.vs {
+    font-family: 'Montserrat', sans-serif;
+  }
 </style>
