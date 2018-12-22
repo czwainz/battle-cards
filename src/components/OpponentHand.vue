@@ -1,5 +1,5 @@
 <template>
-  <div class="opponent row justify-content-around">
+  <div class="opponent row justify-content-around d-flex flex-wrap">
     <div class="col-1 card-deck pt-2" v-for="card in opponentHand" style="max-width: 10rem;" @click="setActiveOpponent(card)">
       <div class="card" v-if="!card.visible">
         <img src="@/assets/pretty-flower.jpg" height="150px">
