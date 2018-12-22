@@ -15,12 +15,12 @@
         <label for="btn-group" class="playGame mt-1">Choose Deck </label>
         <br>
         <div class="btn-group-lg" role="group">
-          <button type="button" class="btn btn-danger" @click="newGame.set = 1">1</button>
-          <button type="button" class="btn btn-warning" @click="newGame.set = 2">2</button>
-          <button type="button" class="btn btn-success" @click="newGame.set = 3">3</button>
-          <button type="button" class="btn btn-info" @click="newGame.set = 4">4</button>
+          <button type="button" class="btn btn-danger mx-1" @click="newGame.set = 1">1</button>
+          <button type="button" class="btn btn-warning mx-1" @click="newGame.set = 2">2</button>
+          <button type="button" class="btn btn-success mx-1" @click="newGame.set = 3">3</button>
+          <button type="button" class="btn btn-info mx-1" @click="newGame.set = 4">4</button>
         </div>
-        <button type="submit" class="btn btn-primary btn-block mt-3">TIME TO PLAY</button>
+        <button type="submit" class="btn btn-primary btn-block mt-3">PLAY</button>
       </form>
     </div>
   </div>

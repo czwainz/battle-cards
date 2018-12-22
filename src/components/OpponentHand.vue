@@ -1,17 +1,17 @@
 <template>
   <div class="opponent row justify-content-around">
-    <div class="col-2 card-deck pt-2" v-for="card in opponentHand" @click="setActiveOpponent(card)">
+    <div class="col-1 card-deck pt-2" v-for="card in opponentHand" style="max-width: 10rem;" @click="setActiveOpponent(card)">
       <div class="card" v-if="!card.visible">
-        <img src="@/assets/pretty-flower.jpg" height="200px">
+        <img src="@/assets/pretty-flower.jpg" height="150px">
       </div>
-      <div class="card bg-primary" v-else="card">
-        <img class="card-img" :src="card.img" height="200px">
+      <div class="card bg-primary" style="width: 5rem; height: auto;" v-else="card">
+        <img class="card-img" :src="card.img" height="150px">
         <div class="card-img-overlay">
           <strong>
             <h5 class="card-title">{{card.name}}</h5>
-            <p class="card-text">Attack: {{card.attack}}
-              <br>Defense: {{card.defense}}
-              <br>Health: {{card.health}}</p>
+            <p class="card-text">{{card.attack}} &nbsp;&nbsp; Attack
+              <br>{{card.defense}}&nbsp;&nbsp; Defense
+              <br>{{card.health}}&nbsp;&nbsp; Health</p>
           </strong>
         </div>
       </div>

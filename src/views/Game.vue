@@ -11,12 +11,10 @@
         <p>··vs··&emsp;&emsp;</p>
         <h3 class="opponent"><strong>{{game.opponent.name}}</strong></h3>
       </div>
-      <div class="row playerGame bg-info">
-        <div class="col-12">
-          <PlayerHand></PlayerHand>
-        </div>
+      <div class="row playerGame bg-info d-flex justify-content-between">
+        <PlayerHand></PlayerHand>
       </div>
-      <div class="row opponentGame bg-secondary">
+      <div class="row opponentGame bg-secondary d-flex justify-content-between">
         <div class="col-12">
           <OpponentHand></OpponentHand>
         </div>
@@ -24,7 +22,7 @@
     </div>
     <div class="row gameOver" v-else="game.over">
       <div class="col-12 mt-5 justify-content-center align-items-center">
-        <h2 class="pt-4 gameOver">·GAME OVER·</h2>
+        <h2 class="pt-4 gameOver">GAME OVER</h2>
         <h4 class="gameOver">{{game.winner}}<br>is victorious!!</h4>
         <br>
         <div class="col-12 justify-content-between">
@@ -125,9 +123,9 @@
     text-shadow: 1px 1px 3px var(--primary);
   }
 
-  h3.player {
+  /* h3.player {
     font-family: 'Shadows Into Light Two', cursive;
-  }
+  } */
 
   h3.opponent {
     font-family: 'Roboto Condensed', sans-serif;

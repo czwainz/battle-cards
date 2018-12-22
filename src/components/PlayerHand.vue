@@ -1,14 +1,14 @@
 <template>
-  <div class="player row justify-content-around">
-    <div class="col-2 card-deck py-2" v-for="card in playerHand" @click="setActivePlayer(card)">
-      <div class="card bg-primary" style="width: 18rem;">
-        <img class="card-img" :src="card.img" height="200px">
+  <div class="player row justify-content-around d-flex flex-wrap">
+    <div class="col-1 card-deck py-2" style="max-width: 10rem;" v-for="card in playerHand" @click="setActivePlayer(card)">
+      <div class="card bg-primary">
+        <img class="card-img" :src="card.img" height="150px">
         <div class="card-img-overlay">
           <strong>
             <h5 class="card-title">{{card.name}}</h5>
-            <p class="card-text">Attack: {{card.attack}}
-              <br>Defense: {{card.defense}}
-              <br>Health: {{card.health}}</p>
+            <p class="card-text">{{card.attack}} &nbsp;&nbsp; Attack
+              <br>{{card.defense}}&nbsp;&nbsp;Defense
+              <br>{{card.health}}&nbsp;&nbsp;Health</p>
           </strong>
         </div>
       </div>
