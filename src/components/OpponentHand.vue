@@ -1,7 +1,7 @@
 <template>
   <div class="opponent row justify-content-around d-flex flex-wrap">
     <div class="col-1 card-deck pt-2" v-for="card in opponentHand" style="max-width: 10rem;" @click="setActiveOpponent(card)">
-      <div class="card" v-if="!card.visible">
+      <div class="card" v-if="!card.visible" style="max-width: 10rem;">
         <img src="@/assets/pretty-flower.jpg" height="150px">
       </div>
       <div class="card bg-primary" style="width: 5rem; height: auto;" v-else="card">

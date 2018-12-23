@@ -12,7 +12,9 @@
         <h3 class="opponent"><strong>{{game.opponent.name}}</strong></h3>
       </div>
       <div class="row playerGame bg-info d-flex justify-content-between">
-        <PlayerHand></PlayerHand>
+        <div class="col-12">
+          <PlayerHand></PlayerHand>
+        </div>
       </div>
       <div class="row opponentGame bg-secondary d-flex justify-content-between">
         <div class="col-12">
